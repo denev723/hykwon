@@ -10,10 +10,10 @@ $font-noto-sans-sc: "Noto Sans SC", "Noto Sans KR", sans-serif;
 
 $font-main: $font-nanum-gothic;
 
-$color-primary: #c99867;
-$color-primary-hover: color.scale(#c99867, $lightness: -20%);
-$color-secondary: #ffcc00;
-$color-secondary-hover: color.scale(#ffcc00, $lightness: -10%);
+$color-primary: #00457b;
+$color-primary-hover: color.scale(#00457b, $lightness: 20%);
+$color-secondary: #112f75;
+$color-secondary-hover: color.scale(#112f75, $lightness: 20%);
 $color-success: #5cb85c;
 $color-danger: #d9534f;
 $color-warning: #f0ad4e;
@@ -21,8 +21,8 @@ $color-info: #5bc0de;
 $color-default: #a5a5a5;
 $color-default-hover: color.scale(#a5a5a5, $lightness: -10%);
 $color-active: #0d6efd;
-$color-em: #083b6b;
-$color-em-hover: color.scale(#083b6b, $lightness: -10%);
+$color-em: #ef8d34;
+$color-em-hover: color.scale(#ef8d34, $lightness: -10%);
 $color-tab-secondary: #f0f0f0;
 $color-tab-secondary-hover: color.scale(#f0f0f0, $lightness: -10%);
 $color-pagination-default: #f0f0f0;

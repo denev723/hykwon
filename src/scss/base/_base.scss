@@ -7,7 +7,7 @@
 
 html {
   &::before {
-    content: "";
+    content: url(../images/menu-bar-hover.png);
     position: absolute;
     width: 0;
     height: 0;

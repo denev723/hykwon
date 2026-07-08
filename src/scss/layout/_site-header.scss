@@ -1,0 +1,168 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.site-header {
+  &__inner {
+    height: rem(140);
+    @include flex-between;
+    padding: 0 rem(40);
+    position: relative;
+  }
+  &__nav {
+    border-top: 1px solid $color-gray-200;
+    border-bottom: 1px solid $color-gray-200;
+  }
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &-link {
+      width: rem(300);
+      height: rem(60);
+      display: block;
+      background-image: url(../images/site-logo.png);
+      background-size: rem(290);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+  }
+  &__all-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(12) 0;
+    &:hover {
+      .site-header__all-menu-icon {
+        background-image: url(../images/menu-bar-h.png);
+      }
+      .site-header__all-menu-label {
+        color: $color-em;
+      }
+    }
+    &-icon {
+      width: rem(40);
+      height: rem(18);
+      display: block;
+      background-image: url(../images/menu-bar.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      transition: background-image 0.3s ease;
+    }
+    &-label {
+      font-family: $font-nanum-square;
+      font-weight: 700;
+      font-size: rem(15);
+      color: $color-primary;
+      transition: color 0.3s ease;
+    }
+  }
+  &__util {
+    display: flex;
+    align-items: center;
+    gap: 0 rem(8);
+  }
+  &__profile {
+    position: relative;
+    &-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &-menu {
+      display: none;
+      position: absolute;
+    }
+  }
+  &__avenue {
+    min-width: rem(180);
+    height: rem(50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: rem(10) rem(15);
+    border-radius: rem(25);
+    border: 1px solid $color-gray-200;
+    font-family: $font-nanum-square;
+    font-weight: 700;
+    font-size: rem(14);
+    line-height: 1;
+    color: $color-primary;
+    transition: border-color 0.3s ease;
+    &:hover {
+      border-color: $color-em;
+    }
+    &-logo {
+      width: rem(77);
+      height: rem(12);
+      display: block;
+      background-image: url(../images/avenue-logo.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+    &-label {
+      margin-left: rem(5);
+      margin-right: rem(8);
+    }
+    &-icon {
+      width: rem(10);
+      height: rem(10);
+      display: block;
+      background-image: url(../images/top-right-arr.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+  }
+  &__nav {
+    padding: 0 rem(40);
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    scrollbar-width: none;
+    line-height: 0;
+    text-align: center;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__menu {
+    min-width: max-content;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0 rem(6);
+    &-item {
+      flex: 0 0 auto;
+      &:not(:last-child) {
+        position: relative;
+        &::after {
+          content: "";
+          width: rem(6);
+          height: rem(6);
+          background-color: $color-primary;
+          position: absolute;
+          top: 50%;
+          right: rem(-6);
+          transform: translateY(-50%);
+        }
+      }
+    }
+    &-link {
+      display: block;
+      padding: rem(22) rem(20);
+      font-family: $font-nanum-square;
+      font-weight: 800;
+      font-size: rem(18);
+      line-height: 1;
+      color: $color-primary;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $color-em;
+      }
+    }
+  }
+}

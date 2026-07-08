@@ -1,0 +1,115 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.site-footer {
+  padding: rem(80) rem(40) rem(84);
+  background-color: #16223a;
+  &__inner {
+    max-width: rem(1530);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    position: relative;
+    & > * {
+      width: 50%;
+      &:nth-child(1),
+      &:nth-child(2) {
+        margin-bottom: rem(63);
+      }
+    }
+  }
+  &__campus {
+    margin-bottom: rem(15);
+    font-family: $font-nanum-square;
+    font-weight: 700;
+    font-size: rem(20);
+    line-height: 1;
+    color: $color-white;
+  }
+  &__logo {
+    &-link {
+      width: rem(310);
+      height: rem(46);
+      display: block;
+      background-image: url(../images/sub-logo.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: rem(-12);
+    &-link {
+      display: block;
+      padding: rem(12) 0;
+      font-family: $font-nanum-square;
+      font-weight: 700;
+      font-size: rem(18);
+      line-height: 1;
+      color: $color-white;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $color-em;
+      }
+    }
+  }
+  &__info {
+    font-family: $font-nanum-square;
+    color: $color-white;
+    line-height: 1;
+  }
+  &__org {
+    margin-bottom: rem(15);
+    font-weight: 700;
+    font-size: rem(18);
+  }
+  &__copy {
+    font-size: rem(16);
+    letter-spacing: -0.02em;
+  }
+  &__link-btn {
+    width: auto;
+    min-width: rem(180);
+    height: rem(50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: rem(10) rem(15);
+    border-radius: rem(25);
+    background-color: $color-white;
+    font-family: $font-nanum-square;
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: 1;
+    color: $color-primary;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: $color-em;
+    }
+    br {
+      display: none;
+    }
+    &-label {
+      margin-left: rem(-10);
+    }
+    &-icon {
+      width: rem(8);
+      height: rem(12);
+      display: block;
+      background-image: url(../images/right-arrow-8.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 50%;
+      right: rem(18);
+      transform: translateY(-50%);
+    }
+  }
+}
