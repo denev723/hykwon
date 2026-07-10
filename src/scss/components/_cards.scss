@@ -1,0 +1,190 @@
+@use "sass:math";
+@use "sass:color";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.review-card {
+  display: block;
+  &__thumb {
+    height: rem(240);
+    background-color: #eaeaea;
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+  &__body {
+    padding: rem(25) rem(30) rem(30);
+    background-color: $color-white;
+  }
+  &__text {
+    font-family: $font-nanum-square;
+    font-size: rem(16);
+    line-height: lh(26);
+    color: $color-secondary;
+    @include multi-ellipsis(3);
+  }
+  &__separator {
+    width: 100%;
+    height: 1px;
+    background-color: #e1e1e1;
+    margin: rem(25) 0 rem(20);
+  }
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 0 rem(12);
+  }
+  &__profile {
+    width: rem(48);
+    height: rem(48);
+    border-radius: 50%;
+    background-color: #ece9f6;
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: rem(6) 0;
+  }
+  &__name {
+    font-family: $font-nanum-square;
+    font-weight: 800;
+    font-size: rem(20);
+    line-height: 1;
+    color: $color-secondary;
+  }
+  &__meta {
+    font-family: $font-nanum-square;
+    font-size: rem(13);
+    line-height: 1;
+    color: #6b87c8;
+  }
+}
+
+.donor-card {
+  min-height: rem(260);
+  display: block;
+  padding: rem(34) rem(30);
+  background-color: #f2f2f2;
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 0 rem(12);
+  }
+  &__profile {
+    width: rem(48);
+    height: rem(48);
+    border-radius: 50%;
+    background-color: #ece9f6;
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: rem(6) 0;
+  }
+  &__name {
+    font-family: $font-nanum-square;
+    font-weight: 800;
+    font-size: rem(20);
+    line-height: 1;
+    color: $color-secondary;
+  }
+  &__meta {
+    font-family: $font-nanum-square;
+    font-size: rem(13);
+    line-height: 1;
+    color: #6b87c8;
+  }
+  &__text {
+    font-family: $font-nanum-square;
+    font-size: rem(16);
+    line-height: lh(26);
+    color: $color-secondary;
+    @include multi-ellipsis(3);
+  }
+  &__separator {
+    width: 100%;
+    height: 1px;
+    background-color: #e1e1e1;
+    margin: rem(20) 0 rem(28);
+  }
+}
+
+.story-card {
+  display: block;
+  &__thumb {
+    height: rem(240);
+    background-color: #eaeaea;
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+  &__body {
+    padding: rem(25) rem(30) rem(30);
+    background-color: #f2f2f2;
+  }
+  &__text {
+    font-family: $font-nanum-square;
+    font-size: rem(16);
+    line-height: lh(26);
+    color: $color-secondary;
+    @include multi-ellipsis(3);
+  }
+  &__separator {
+    width: 100%;
+    height: 1px;
+    background-color: #e1e1e1;
+    margin: rem(25) 0 rem(20);
+  }
+  &__author {
+    display: flex;
+    flex-direction: column;
+    gap: rem(6) 0;
+  }
+  &__name {
+    font-family: $font-nanum-square;
+    font-weight: 800;
+    font-size: rem(20);
+    line-height: 1;
+    color: $color-secondary;
+  }
+  &__meta {
+    font-family: $font-nanum-square;
+    font-size: rem(13);
+    line-height: 1;
+    color: #6b87c8;
+  }
+}

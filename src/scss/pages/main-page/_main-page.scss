@@ -1,0 +1,156 @@
+@use "sass:math";
+@use "sass:color";
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.main-section {
+  &.main-section--today {
+    padding: rem(54) rem(20) rem(80);
+    .main-section__head {
+      margin-bottom: rem(30);
+      position: relative;
+    }
+    .btn-round {
+      padding: rem(13) rem(19);
+      font-family: $font-nanum-square;
+      font-weight: 700;
+      font-size: rem(15);
+      line-height: 1;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      &--outline {
+        border-color: #dddddd;
+        color: $color-primary;
+        &:hover {
+          background-color: $color-primary;
+          border-color: $color-primary;
+          color: $color-white;
+        }
+      }
+      &--icon {
+        gap: 0 rem(9);
+        &:hover {
+          .btn-round__icon {
+            background-image: url(../images/calendar-w-23.png);
+          }
+        }
+      }
+      &__icon {
+        width: rem(23);
+        height: rem(22);
+        background-image: url(../images/calendar-23.png);
+      }
+    }
+  }
+  &.main-section--review {
+    padding: rem(75) 0 rem(80);
+    background-color: #f1f0f6;
+    .main-section__slider-nav {
+      margin-bottom: rem(20);
+    }
+    .review-swiper {
+      margin-bottom: rem(50);
+      .swiper-slide {
+        width: rem(360);
+        margin-right: rem(30);
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    .main-section__foot {
+      display: flex;
+      justify-content: center;
+      .btn-round {
+        padding: rem(15) rem(20);
+        background-color: $color-secondary;
+        font-family: $font-nanum-square;
+        font-weight: 700;
+        font-size: rem(18);
+        line-height: 1;
+        color: $color-white;
+        &:hover {
+          background-color: $color-secondary-hover;
+        }
+        &--icon {
+          width: rem(180);
+          height: rem(70);
+          gap: 0 rem(11);
+        }
+        &__icon {
+          width: rem(26);
+          height: rem(30);
+          background-image: url(../images/chat-bubble-w.png);
+        }
+      }
+    }
+  }
+  &.main-section--story {
+    padding: rem(75) 0 rem(80);
+    .main-section__block {
+      &.main-section__block--donor {
+        .main-section__slider {
+          .main-section__slider-nav {
+            margin-bottom: rem(30);
+          }
+        }
+      }
+      &.main-section__block--usage {
+        .main-section__head {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: rem(20);
+        }
+      }
+    }
+    .main-section__title {
+      &.main-section__title--sub {
+        display: flex;
+        align-items: center;
+        gap: 0 rem(11);
+        .main-section__title-icon {
+          width: rem(35);
+          height: rem(35);
+          background-image: url(../images/chat-bubble-smile.png);
+        }
+        .main-section__title-text {
+          font-family: $font-nanum-square;
+          font-size: rem(35);
+          line-height: 1;
+        }
+      }
+    }
+    .main-section__separator {
+      width: 100%;
+      height: 1px;
+      margin: rem(60) 0;
+      background-color: #e1e1e1;
+    }
+    .donor-swiper {
+      margin-bottom: rem(40);
+      .swiper-slide {
+        width: rem(750);
+        margin-right: rem(40);
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    .usage-swiper {
+      margin-bottom: rem(40);
+      .swiper-slide {
+        width: rem(360);
+        margin-right: rem(30);
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  &.main-section--news {
+    background-color: #f2f2f2;
+  }
+}

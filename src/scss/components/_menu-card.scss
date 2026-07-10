@@ -1,0 +1,142 @@
+@use "sass:math";
+@use "sass:color";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.menu-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(50) rem(30);
+  &__item {
+    min-width: rem(490);
+  }
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  &:hover {
+    .menu-card__cta {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__thumb {
+    height: rem(460);
+    margin-bottom: rem(20);
+    background-color: #eaeaea;
+    position: relative;
+  }
+  &__takeout {
+    width: rem(90);
+    height: rem(46);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: rem(8);
+    background-color: #112f75;
+    position: absolute;
+    top: rem(15);
+    right: rem(15);
+    &-label {
+      font-family: $font-nanum-square;
+      font-weight: 800;
+      font-size: rem(18);
+      line-height: 1;
+      color: $color-white;
+      b {
+        color: $color-yellow;
+      }
+    }
+  }
+  &__cta {
+    width: rem(180);
+    height: rem(80);
+    display: inline-flex;
+    align-items: center;
+    gap: 0 rem(15);
+    padding: rem(10);
+    border-radius: rem(40);
+    background-color: $color-white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    &-icon {
+      width: rem(60);
+      height: rem(60);
+      background-image: url(../images/fork-round.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &-label {
+      font-family: $font-nanum-square;
+      font-weight: 800;
+      font-size: rem(20);
+      line-height: 1;
+      color: $color-primary;
+    }
+  }
+  &__body {
+    padding-right: rem(80);
+    position: relative;
+  }
+  &__category {
+    min-width: rem(70);
+    height: rem(40);
+    display: inline-flex;
+    align-items: center;
+    padding: rem(8) rem(16);
+    margin-bottom: rem(8);
+    border-radius: rem(99);
+    background-color: #112f75;
+    font-family: $font-nanum-square;
+    font-weight: 700;
+    font-size: rem(15);
+    line-height: 1;
+    text-align: center;
+    color: $color-white;
+  }
+  &__title {
+    font-family: $font-nanum-square;
+    font-weight: 700;
+    font-size: rem(22);
+    line-height: lh(32);
+    color: $color-primary;
+  }
+  &__separator {
+    width: 100%;
+    height: 1px;
+    background-color: #dddddd;
+    margin: rem(27) 0 rem(20);
+  }
+  &__tomorrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-badge {
+      width: rem(80);
+      height: rem(36);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: rem(99);
+      background-color: #e4e5f2;
+      font-family: $font-nanum-square;
+      font-size: rem(15);
+      line-height: 1;
+      color: $color-primary;
+    }
+    &-title {
+      font-family: $font-nanum-square;
+      font-weight: 700;
+      font-size: rem(16);
+      line-height: lh(26);
+      color: $color-primary;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@use "sass:math";
+@use "sass:color";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.btn-round {
+  border-radius: rem(999);
+  transition: background-color 0.3s ease;
+  &--outline {
+    border-width: 1px;
+    border-style: solid;
+    background-color: transparent;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    .btn-round__label {
+      transition: color 0.3s ease;
+    }
+  }
+  &--icon {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .btn-round__icon {
+      display: block;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 0.3s ease;
+    }
+  }
+}

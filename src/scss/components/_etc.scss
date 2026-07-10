@@ -1,0 +1,77 @@
+@use "sass:math";
+@use "sass:color";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.main-section {
+  &__inner {
+    max-width: rem(1530);
+    margin: 0 auto;
+  }
+  &__head {
+    &.main-section__head--center {
+      margin-bottom: rem(30);
+      text-align: center;
+    }
+  }
+  &__badge {
+    height: rem(45);
+    display: inline-flex;
+    align-items: center;
+    padding: rem(10) rem(16);
+    margin-bottom: rem(20);
+    border-radius: rem(99);
+    border: rem(3) solid #112f75;
+    font-family: $font-nanum-square;
+    font-weight: 700;
+    font-size: rem(13);
+    line-height: 1;
+    color: #112f75;
+  }
+  &__title {
+    font-family: $font-s-core-dream;
+    font-weight: 300;
+    font-size: rem(34);
+    line-height: 1;
+    text-align: center;
+    color: $color-secondary;
+    &-accent {
+      font-weight: 800;
+      color: $color-em;
+    }
+  }
+  &__desc {
+    margin-top: rem(8);
+    font-family: $font-nanum-square;
+    font-size: rem(15);
+    line-height: lh(25);
+    color: #112f75;
+  }
+  &__slider {
+    &-nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0 rem(6);
+      .swiper-nav-btn {
+        display: block;
+        width: rem(46);
+        height: rem(46);
+        border-radius: 50%;
+        background-size: rem(16);
+        background-color: #cccccc;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: $color-secondary;
+        }
+        &--prev {
+          background-image: url(../images/slide-prev.png);
+        }
+        &--next {
+          background-image: url(../images/slide-next.png);
+        }
+      }
+    }
+  }
+}

@@ -7,3 +7,12 @@
 // layout
 @use "layout/site-header" as *;
 @use "layout/site-footer" as *;
+
+// components
+@use "components/fixed-menu" as *;
+@use "components/menu-card" as *;
+@use "components/cards" as *;
+@use "components/button" as *;
+@use "components/etc" as *;
+// pages
+@use "pages/main-page/_main-page" as *;

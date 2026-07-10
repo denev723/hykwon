@@ -1,3 +1,5 @@
+@use "sass:math";
+@use "sass:color";
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
@@ -65,14 +67,61 @@
   }
   &__profile {
     position: relative;
+    &.is-active {
+      .site-header__profile-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
     &-btn {
       display: flex;
       justify-content: center;
       align-items: center;
     }
     &-menu {
-      display: none;
+      display: flex;
+      flex-direction: column;
+      gap: rem(8) 0;
+      padding: rem(12);
+      border-radius: rem(20);
+      background-color: $color-white;
       position: absolute;
+      top: calc(100% + rem(12));
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    &-link {
+      width: rem(120);
+      height: rem(50);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: rem(10);
+      border-radius: rem(10);
+      font-family: $font-nanum-square;
+      font-size: rem(16);
+      line-height: 1;
+      &--login,
+      &--logout {
+        background-color: $color-primary;
+        color: $color-white;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: $color-primary-hover;
+        }
+      }
+      &--mypage {
+        background-color: #dbe9f6;
+        color: $color-primary;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: color.scale(#dbe9f6, $lightness: -10%);
+        }
+      }
     }
   }
   &__avenue {
