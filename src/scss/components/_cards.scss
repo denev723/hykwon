@@ -5,6 +5,13 @@
 
 .review-card {
   display: block;
+  &:hover {
+    .review-card__thumb {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
   &__thumb {
     height: rem(240);
     background-color: #eaeaea;
@@ -17,6 +24,8 @@
       top: 0;
       left: 0;
       object-fit: cover;
+      transform: scale(1);
+      transition: transform 0.3s ease;
     }
   }
   &__body {
@@ -78,10 +87,29 @@
 }
 
 .donor-card {
+  width: 100%;
   min-height: rem(260);
   display: block;
   padding: rem(34) rem(30);
   background-color: #f2f2f2;
+  position: relative;
+  &:hover {
+    &::after {
+      border-color: $color-primary;
+    }
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: rem(3) solid transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+  }
   &__head {
     display: flex;
     align-items: center;
@@ -138,6 +166,13 @@
 
 .story-card {
   display: block;
+  &:hover {
+    .story-card__thumb {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
   &__thumb {
     height: rem(240);
     background-color: #eaeaea;
@@ -150,6 +185,8 @@
       top: 0;
       left: 0;
       object-fit: cover;
+      transform: scale(1);
+      transition: transform 0.3s ease;
     }
   }
   &__body {
@@ -186,5 +223,63 @@
     font-size: rem(13);
     line-height: 1;
     color: #6b87c8;
+  }
+}
+
+.news-card {
+  min-height: rem(220);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: rem(35);
+  background-color: $color-white;
+  font-family: $font-nanum-square;
+  position: relative;
+  &:hover {
+    &::after {
+      border-color: $color-primary;
+    }
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: rem(3) solid transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+  }
+  &__category {
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: 1;
+    color: #aaaaaa;
+  }
+  &__title {
+    flex: 1;
+    margin: rem(15) 0 rem(5);
+    font-weight: 800;
+    font-size: rem(20);
+    line-height: lh(30);
+  }
+  &__date {
+    display: flex;
+    align-items: center;
+    gap: 0 rem(6);
+    font-weight: 700;
+    font-size: rem(14);
+    line-height: 1;
+    &-icon {
+      width: rem(14);
+      height: rem(14);
+      display: block;
+      background-image: url(../images/clock-gray.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 }

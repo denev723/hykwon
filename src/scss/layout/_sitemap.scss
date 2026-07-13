@@ -1,0 +1,121 @@
+@use "sass:math";
+@use "sass:color";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.sitemap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 299;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    .sitemap__inner {
+      transform: translateX(0);
+    }
+  }
+  &__inner {
+    max-width: rem(1800);
+    height: 100%;
+    padding-left: rem(128);
+    background-color: $color-white;
+    position: relative;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+  }
+  &__head {
+    height: rem(142);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__body {
+    max-width: rem(800);
+    margin: 0 auto;
+  }
+  &__title {
+    font-family: $font-s-core-dream;
+    font-weight: 300;
+    font-size: rem(40);
+    line-height: 1;
+    color: $color-secondary;
+    b {
+      font-weight: 700;
+    }
+  }
+  &__back {
+    width: rem(128);
+    height: rem(142);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    &-icon {
+      width: rem(22);
+      height: rem(36);
+      display: block;
+      background-image: url(../images/sitemap-larr.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  &__group {
+    padding: rem(35) 0;
+    border-bottom: 1px solid #eeeeee;
+    &:last-child {
+      border-bottom: none;
+    }
+    &-title {
+      display: block;
+      padding: rem(10) 0;
+      font-family: $font-s-core-dream;
+      font-weight: 500;
+      font-size: rem(26);
+      line-height: 1;
+      color: $color-secondary;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $color-em;
+      }
+    }
+  }
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(40) 0;
+    margin-top: rem(40);
+    &-item {
+      width: 20%;
+    }
+    &-link {
+      display: block;
+      padding-top: rem(100);
+      background-size: rem(80);
+      background-repeat: no-repeat;
+      background-position: 50% 0%;
+      font-family: $font-s-core-dream;
+      font-weight: 500;
+      font-size: rem(18);
+      line-height: 1;
+      text-align: center;
+      color: $color-secondary;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $color-em;
+      }
+    }
+  }
+}

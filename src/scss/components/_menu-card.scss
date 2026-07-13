@@ -25,6 +25,9 @@
     height: rem(460);
     margin-bottom: rem(20);
     background-color: #eaeaea;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
   }
   &__takeout {

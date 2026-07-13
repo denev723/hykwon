@@ -3,6 +3,15 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
+body.is-fixed-nav {
+  .site-header__nav-cover {
+    transform: scaleY(1);
+  }
+  .site-header__submenu {
+    transform: scaleY(1);
+  }
+}
+
 .site-header {
   &__inner {
     height: rem(140);
@@ -93,6 +102,7 @@
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 99;
     }
     &-link {
       width: rem(120);
@@ -167,15 +177,19 @@
   }
   &__nav {
     padding: 0 rem(40);
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
-    scrollbar-width: none;
     line-height: 0;
     text-align: center;
-    &::-webkit-scrollbar {
-      display: none;
+    position: relative;
+    &-cover {
+      width: 100%;
+      background-color: $color-white;
+      position: absolute;
+      top: calc(100% + 1px);
+      left: 0;
+      z-index: 98;
+      transform-origin: top;
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
     }
   }
   &__menu {
@@ -186,6 +200,15 @@
     gap: 0 rem(6);
     &-item {
       flex: 0 0 auto;
+      position: relative;
+      &.is-active {
+        .site-header__menu-link-text {
+          &::after {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
       &:not(:last-child) {
         position: relative;
         &::after {
@@ -202,7 +225,7 @@
     }
     &-link {
       display: block;
-      padding: rem(22) rem(20);
+      padding: 0 rem(20);
       font-family: $font-nanum-square;
       font-weight: 800;
       font-size: rem(18);
@@ -211,6 +234,50 @@
       transition: color 0.3s ease;
       &:hover {
         color: $color-em;
+      }
+      &-text {
+        display: block;
+        padding: rem(22) 0;
+        position: relative;
+        &::after {
+          content: "";
+          width: 100%;
+          height: rem(3);
+          background-color: $color-primary;
+          position: absolute;
+          top: calc(100% + 1px);
+          left: 0;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+          z-index: 99;
+        }
+      }
+    }
+  }
+  &__submenu {
+    width: 100%;
+    padding: rem(31) 0;
+    background-color: transparent;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    z-index: 99;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+    &-link {
+      display: block;
+      padding: rem(9) rem(2);
+      background-color: $color-white;
+      font-family: $font-s-core-dream;
+      font-weight: 500;
+      font-size: rem(16);
+      line-height: 1;
+      color: $color-secondary;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: #f1f0f6;
       }
     }
   }

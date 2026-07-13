@@ -45,7 +45,7 @@
     }
   }
   &.main-section--review {
-    padding: rem(75) 0 rem(80);
+    padding: rem(75) rem(20) rem(80);
     background-color: #f1f0f6;
     .main-section__slider-nav {
       margin-bottom: rem(20);
@@ -56,7 +56,7 @@
         width: rem(360);
         margin-right: rem(30);
         &:last-child {
-          margin-right: 0;
+          margin-right: 0 !important;
         }
       }
     }
@@ -88,7 +88,7 @@
     }
   }
   &.main-section--story {
-    padding: rem(75) 0 rem(80);
+    padding: rem(75) rem(20) rem(80);
     .main-section__block {
       &.main-section__block--donor {
         .main-section__slider {
@@ -117,9 +117,18 @@
           background-image: url(../images/chat-bubble-smile.png);
         }
         .main-section__title-text {
-          font-family: $font-nanum-square;
-          font-size: rem(35);
+          font-family: $font-s-core-dream;
+          font-weight: 300;
+          font-size: rem(28);
           line-height: 1;
+          text-align: center;
+          color: $color-secondary;
+          position: relative;
+          top: rem(4);
+          b {
+            font-weight: 800;
+            color: $color-em;
+          }
         }
       }
     }
@@ -133,9 +142,9 @@
       margin-bottom: rem(40);
       .swiper-slide {
         width: rem(750);
-        margin-right: rem(40);
+        margin-right: rem(30);
         &:last-child {
-          margin-right: 0;
+          margin-right: 0 !important;
         }
       }
     }
@@ -145,12 +154,98 @@
         width: rem(360);
         margin-right: rem(30);
         &:last-child {
-          margin-right: 0;
+          margin-right: 0 !important;
         }
       }
     }
   }
   &.main-section--news {
+    padding: rem(100) rem(20) rem(90);
     background-color: #f2f2f2;
+    .main-section__head {
+      margin-bottom: rem(60);
+      position: relative;
+    }
+    .main-section__foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .main-section__tabs {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      right: rem(-11);
+      &-link {
+        padding: 0 rem(11);
+        font-family: $font-nanum-square;
+        font-weight: 700;
+        font-size: rem(18);
+        line-height: 1;
+        color: #aaaaaa;
+        transition: color 0.3s ease;
+        &:hover {
+          color: $color-em;
+        }
+        &.is-active {
+          color: $color-primary;
+          &:hover {
+            color: $color-primary-hover;
+            .main-section__tabs-label {
+              border-bottom-color: $color-primary-hover;
+            }
+          }
+          .main-section__tabs-label {
+            border-bottom-color: $color-primary;
+          }
+        }
+      }
+      &-label {
+        display: inline-block;
+        padding: rem(7) 0;
+        border-bottom: rem(2) solid transparent;
+      }
+    }
+    .main-section__slider {
+      margin-bottom: rem(30);
+    }
+    .news-swiper {
+      .swiper-slide {
+        width: rem(367.5);
+        margin-right: rem(20);
+        &:last-child {
+          margin-right: 0 !important;
+        }
+      }
+    }
+    .main-section__more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0 rem(10);
+      font-family: $font-nanum-square;
+      font-weight: 700;
+      font-size: rem(16);
+      line-height: 1;
+      color: #0c2657;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $color-em;
+        .main-section__more-icon {
+          background-color: $color-em;
+        }
+      }
+      &-icon {
+        width: rem(46);
+        height: rem(46);
+        display: block;
+        border-radius: 50%;
+        background-color: #0c2657;
+        background-image: url(../images/top-right-arr-12.png);
+        background-size: rem(12);
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: background-color 0.3s ease;
+      }
+    }
   }
 }
