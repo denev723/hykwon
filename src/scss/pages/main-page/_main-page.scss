@@ -10,6 +10,16 @@
       margin-bottom: rem(30);
       position: relative;
     }
+    .main-section__body {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
     .btn-round {
       padding: rem(13) rem(19);
       font-family: $font-nanum-square;
@@ -115,6 +125,8 @@
           width: rem(35);
           height: rem(35);
           background-image: url(../images/chat-bubble-smile.png);
+          background-size: cover;
+          background-position: center;
         }
         .main-section__title-text {
           font-family: $font-s-core-dream;
@@ -141,7 +153,7 @@
     .donor-swiper {
       margin-bottom: rem(40);
       .swiper-slide {
-        width: rem(750);
+        max-width: rem(750);
         margin-right: rem(30);
         &:last-child {
           margin-right: 0 !important;
@@ -175,12 +187,13 @@
       display: flex;
       position: absolute;
       bottom: 0;
-      right: rem(-11);
+      right: 0;
+      margin-right: rem(-11);
       &-link {
         padding: 0 rem(11);
         font-family: $font-nanum-square;
         font-weight: 700;
-        font-size: rem(18);
+        font-size: rem(16);
         line-height: 1;
         color: #aaaaaa;
         transition: color 0.3s ease;
@@ -245,6 +258,190 @@
         background-repeat: no-repeat;
         background-position: center;
         transition: background-color 0.3s ease;
+      }
+    }
+  }
+}
+
+// --------------------------------
+// Responsive (down to 320px)
+// --------------------------------
+@media (max-width: 1200px) {
+  .main-section {
+    &.main-section--today {
+      padding-bottom: rem(60);
+    }
+    &.main-section--review {
+      padding: rem(60) rem(20);
+    }
+    &.main-section--story {
+      padding: rem(60) rem(20);
+      .donor-swiper .swiper-slide {
+        max-width: rem(600);
+      }
+      .main-section__separator {
+        margin: rem(48) 0;
+      }
+    }
+    &.main-section--news {
+      padding: rem(70) rem(20);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-section {
+    .main-section__title {
+      font-size: rem(28);
+    }
+
+    &.main-section--today {
+      padding: rem(40) rem(20) rem(48);
+      .main-section__head {
+        margin-bottom: rem(24);
+      }
+      .btn-round {
+        padding: rem(10) rem(15);
+        font-size: rem(13);
+      }
+    }
+
+    &.main-section--review {
+      padding: rem(48) rem(20);
+      .main-section__slider-nav {
+        margin-bottom: rem(16);
+      }
+      .review-swiper {
+        margin-bottom: rem(36);
+        .swiper-slide {
+          width: rem(300);
+          margin-right: rem(20);
+        }
+      }
+      .main-section__foot .btn-round--icon {
+        width: rem(160);
+        height: rem(60);
+        font-size: rem(16);
+      }
+    }
+
+    &.main-section--story {
+      padding: rem(48) rem(20);
+      .main-section__separator {
+        margin: rem(40) 0;
+      }
+      .main-section__title {
+        &.main-section__title--sub {
+          font-size: rem(22);
+        }
+      }
+      .donor-swiper {
+        margin-bottom: rem(32);
+        .swiper-slide {
+          width: rem(440);
+          max-width: 100%;
+          margin-right: rem(20);
+        }
+      }
+      .usage-swiper {
+        margin-bottom: rem(32);
+        .swiper-slide {
+          width: rem(300);
+          margin-right: rem(20);
+        }
+      }
+    }
+
+    &.main-section--news {
+      padding: rem(48) rem(20);
+      .main-section__head {
+        margin-bottom: rem(30);
+      }
+      .main-section__tabs {
+        position: static;
+        justify-content: flex-end;
+        margin-top: rem(20);
+        margin-right: rem(-11);
+        right: auto;
+      }
+      .news-swiper .swiper-slide {
+        width: rem(300);
+        margin-right: rem(20);
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .main-section {
+    .main-section__title {
+      font-size: rem(22);
+    }
+
+    &.main-section--today {
+      padding: rem(28) rem(20) rem(36);
+      .main-section__head {
+        margin-bottom: rem(20);
+      }
+      .btn-round {
+        padding: rem(8) rem(12);
+        font-size: rem(12);
+        &__icon {
+          width: rem(20);
+          height: rem(19);
+        }
+      }
+    }
+
+    &.main-section--review {
+      padding: rem(36) rem(20);
+      .review-swiper {
+        margin-bottom: rem(28);
+        .swiper-slide {
+          width: rem(240);
+          margin-right: rem(14);
+        }
+      }
+      .main-section__foot .btn-round--icon {
+        width: rem(150);
+        height: rem(56);
+        font-size: rem(15);
+      }
+    }
+
+    &.main-section--story {
+      padding: rem(36) rem(20);
+      .main-section__separator {
+        margin: rem(28) 0;
+      }
+      .main-section__title {
+        &.main-section__title--sub {
+          gap: 0 rem(8);
+          .main-section__title-icon {
+            width: rem(24);
+            height: rem(24);
+          }
+          .main-section__title-text {
+            top: rem(3);
+            font-size: rem(19);
+          }
+        }
+      }
+      .donor-swiper .swiper-slide {
+        width: rem(260);
+        margin-right: rem(14);
+      }
+      .usage-swiper .swiper-slide {
+        width: rem(240);
+        margin-right: rem(14);
+      }
+    }
+
+    &.main-section--news {
+      padding: rem(36) rem(20);
+      .news-swiper .swiper-slide {
+        width: rem(240);
+        margin-right: rem(14);
       }
     }
   }

@@ -19,15 +19,22 @@ body.is-fixed-nav {
     padding: 0 rem(40);
     position: relative;
   }
+  &__col {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    &--center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
   &__nav {
     border-top: 1px solid $color-gray-200;
     border-bottom: 1px solid $color-gray-200;
   }
   &__logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     &-link {
       width: rem(300);
       height: rem(60);
@@ -83,6 +90,8 @@ body.is-fixed-nav {
       }
     }
     &-btn {
+      width: rem(50);
+      height: rem(50);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -278,6 +287,125 @@ body.is-fixed-nav {
       transition: background-color 0.3s ease;
       &:hover {
         background-color: #f1f0f6;
+      }
+    }
+  }
+}
+
+// --------------------------------
+// Responsive (down to 320px)
+// --------------------------------
+@media (max-width: 1200px) {
+  .site-header {
+    &__inner {
+      height: rem(100);
+      padding: 0 rem(24);
+    }
+
+    &__logo-link {
+      width: rem(220);
+      height: rem(44);
+      background-size: rem(210);
+    }
+
+    &__nav {
+      padding: 0 rem(24);
+    }
+
+    &__avenue {
+      display: none;
+    }
+
+    &__profile-menu {
+      left: auto;
+      right: 0;
+      transform: none;
+    }
+
+    &__menu-link {
+      padding: 0 rem(14);
+
+      &-text {
+        padding: rem(18) 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    &__inner {
+      height: rem(72);
+      padding: 0 rem(16);
+    }
+
+    &__logo-link {
+      width: rem(180);
+      height: rem(36);
+      background-size: contain;
+    }
+
+    &__all-menu {
+      gap: 0;
+
+      &-label {
+        display: none;
+      }
+    }
+
+    &__avenue {
+      min-width: 0;
+      height: rem(40);
+      padding: rem(8) rem(12);
+      font-size: rem(13);
+
+      &-logo {
+        width: rem(60);
+        height: rem(10);
+      }
+
+      &-label {
+        margin-left: rem(4);
+        margin-right: rem(4);
+      }
+    }
+
+    &__nav {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    &__inner {
+      height: rem(64);
+      padding: 0 rem(20);
+    }
+
+    &__logo-link {
+      width: rem(150);
+      height: rem(30);
+    }
+
+    &__all-menu-icon {
+      width: rem(28);
+      height: rem(13);
+    }
+
+    &__util {
+      gap: 0 rem(4);
+    }
+
+    &__profile {
+      &-btn {
+        width: rem(40);
+        height: rem(40);
+      }
+      &-link {
+        width: rem(100);
+        height: rem(44);
+        font-size: rem(14);
       }
     }
   }

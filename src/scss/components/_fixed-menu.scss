@@ -8,7 +8,7 @@
   top: 50%;
   right: rem(25);
   transform: translateY(-50%);
-  z-index: 199;
+  z-index: 97;
   &__list {
     display: flex;
     flex-direction: column;
@@ -47,5 +47,15 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-fixed-menu {
+    right: rem(20);
+    &__link {
+      width: rem(80);
+      height: rem(80);
+    }
   }
 }

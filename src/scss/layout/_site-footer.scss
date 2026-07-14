@@ -86,7 +86,7 @@
     font-weight: 700;
     font-size: rem(16);
     line-height: 1;
-    color: $color-primary;
+    color: #12223c;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -112,6 +112,117 @@
       top: 50%;
       right: rem(18);
       transform: translateY(-50%);
+    }
+  }
+}
+
+// --------------------------------
+// Responsive (down to 320px)
+// --------------------------------
+@media (max-width: 1200px) {
+  .site-footer {
+    padding: rem(60) rem(32) rem(64);
+
+    &__logo-link {
+      width: rem(260);
+      height: rem(39);
+    }
+
+    &__campus {
+      font-size: rem(18);
+    }
+
+    &__menu-link {
+      font-size: rem(16);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: rem(48) rem(20) rem(52);
+
+    &__inner {
+      flex-direction: column;
+
+      & > * {
+        width: 100%;
+
+        &:nth-child(1),
+        &:nth-child(2) {
+          margin-bottom: rem(32);
+        }
+      }
+    }
+
+    &__menu {
+      align-items: flex-start;
+      margin-top: 0;
+    }
+
+    &__logo-link {
+      width: rem(220);
+      height: rem(33);
+    }
+
+    &__link-btn {
+      width: rem(90);
+      min-width: auto;
+      height: rem(64);
+      padding: rem(10) rem(15);
+      border-radius: rem(10);
+      font-size: rem(14);
+      line-height: lh(20);
+      //   position: relative;
+      br {
+        display: initial;
+      }
+      &-label {
+        margin-left: 0;
+      }
+      &-icon {
+        width: rem(6);
+        height: rem(10);
+        top: rem(37);
+        right: rem(18);
+        transform: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding: rem(40) rem(20) rem(40);
+
+    &__campus {
+      margin-bottom: rem(12);
+      font-size: rem(16);
+    }
+
+    &__logo-link {
+      width: rem(180);
+      height: rem(27);
+    }
+
+    &__menu-link {
+      padding: rem(10) 0;
+      font-size: rem(15);
+    }
+
+    &__org {
+      margin-bottom: rem(10);
+      font-size: rem(15);
+    }
+
+    &__copy {
+      font-size: rem(13);
+      word-break: keep-all;
+    }
+
+    &__link-btn {
+      margin-top: rem(32);
+      position: relative;
     }
   }
 }

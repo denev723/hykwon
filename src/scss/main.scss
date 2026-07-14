@@ -14,6 +14,7 @@
 @use "components/menu-card" as *;
 @use "components/cards" as *;
 @use "components/button" as *;
-@use "components/etc" as *;
 // pages
+@use "pages/main-page/_common" as *;
 @use "pages/main-page/_main-page" as *;
+@use "pages/sub-page/_common" as *;

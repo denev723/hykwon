@@ -1,7 +1,7 @@
 @use "sass:math";
 @use "sass:color";
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
 
 .main-section {
   &__inner {
@@ -71,6 +71,38 @@
         &--next {
           background-image: url(../images/slide-next.png);
         }
+      }
+    }
+    .swiper-pagination {
+      display: flex;
+      justify-content: center;
+      gap: 0 rem(10);
+      position: static;
+      .swiper-pagination-bullet {
+        width: rem(12);
+        height: rem(12);
+        margin: 0;
+        background-color: #dddddd;
+        opacity: 1;
+        &.swiper-pagination-bullet-active {
+          background-color: $color-secondary;
+        }
+      }
+    }
+  }
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 0 rem(13);
+    .swiper-pagination {
+      font-family: $font-nanum-square;
+      font-weight: 700;
+      font-size: rem(14);
+      line-height: 1;
+      color: #aaaaaa;
+      position: static;
+      .swiper-pagination-current {
+        color: #0f39a7;
       }
     }
   }

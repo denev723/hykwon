@@ -5,7 +5,6 @@
 
 .menu-card-list {
   display: flex;
-  flex-wrap: wrap;
   gap: rem(50) rem(30);
   &__item {
     min-width: rem(490);
@@ -140,6 +139,150 @@
       font-size: rem(16);
       line-height: lh(26);
       color: $color-primary;
+    }
+  }
+}
+
+// --------------------------------
+// Responsive (down to 320px)
+// --------------------------------
+@media (max-width: 1200px) {
+  .menu-card-list {
+    gap: rem(40) rem(20);
+    &__item {
+      min-width: rem(360);
+    }
+  }
+
+  .menu-card {
+    &__thumb {
+      height: rem(360);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-card-list {
+    gap: rem(30) rem(20);
+  }
+
+  .menu-card {
+    &__thumb {
+      height: rem(280);
+      margin-bottom: rem(16);
+    }
+    &__takeout {
+      width: rem(76);
+      height: rem(40);
+      top: rem(12);
+      right: rem(12);
+      &-label {
+        font-size: rem(15);
+      }
+    }
+    &__cta {
+      width: rem(150);
+      height: rem(64);
+      gap: 0 rem(12);
+      &-icon {
+        width: rem(48);
+        height: rem(48);
+      }
+      &-label {
+        font-size: rem(17);
+      }
+    }
+    &__body {
+      padding-right: rem(60);
+    }
+    &__category {
+      min-width: rem(60);
+      height: rem(34);
+      padding: rem(6) rem(14);
+      font-size: rem(13);
+    }
+    &__title {
+      font-size: rem(19);
+      line-height: lh(28);
+    }
+    &__separator {
+      margin: rem(20) 0 rem(16);
+    }
+    &__tomorrow {
+      &-badge {
+        width: rem(72);
+        height: rem(32);
+        font-size: rem(13);
+      }
+      &-title {
+        font-size: rem(14);
+        line-height: lh(22);
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-card-list {
+    gap: rem(24) rem(14);
+    .menu-card-list__item {
+      min-width: rem(280);
+    }
+  }
+
+  .menu-card {
+    &__thumb {
+      height: rem(240);
+      margin-bottom: rem(12);
+    }
+    &__takeout {
+      width: rem(64);
+      height: rem(34);
+      top: rem(10);
+      right: rem(10);
+      &-label {
+        font-size: rem(13);
+      }
+    }
+    &__cta {
+      width: rem(130);
+      height: rem(56);
+      gap: 0 rem(10);
+      &-icon {
+        width: rem(42);
+        height: rem(42);
+      }
+      &-label {
+        font-size: rem(15);
+      }
+    }
+    &__body {
+      padding-right: rem(48);
+    }
+    &__category {
+      min-width: rem(50);
+      height: rem(30);
+      padding: rem(5) rem(12);
+      margin-bottom: rem(6);
+      font-size: rem(12);
+    }
+    &__title {
+      font-size: rem(16);
+      line-height: lh(24);
+    }
+    &__separator {
+      margin: rem(16) 0 rem(12);
+    }
+    &__tomorrow {
+      &-badge {
+        width: rem(64);
+        height: rem(28);
+        font-size: rem(12);
+      }
+      &-title {
+        font-size: rem(13);
+        line-height: lh(20);
+      }
     }
   }
 }

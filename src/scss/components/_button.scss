@@ -29,3 +29,23 @@
     }
   }
 }
+
+// --------------------------------
+// Responsive (down to 320px)
+// 크기·패딩은 사용처(main-page 등)에서 지정, 여기서는 공통 간격만 조정
+// --------------------------------
+@media (max-width: 768px) {
+  .btn-round {
+    &--icon {
+      gap: 0 rem(8);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-round {
+    &--icon {
+      gap: 0 rem(5);
+    }
+  }
+}

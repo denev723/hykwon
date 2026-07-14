@@ -1,0 +1,103 @@
+@use "sass:math";
+@use "sass:color";
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.page-content {
+  padding: rem(90) 0 rem(200);
+}
+
+.page-title {
+  padding: 0 rem(20);
+  margin-bottom: rem(30);
+  font-family: $font-s-core-dream;
+  font-weight: 300;
+  font-size: rem(34);
+  line-height: lh(46);
+  color: $color-primary;
+  text-align: center;
+  b {
+    font-weight: 700;
+  }
+}
+
+// --------------------------------
+// Responsive (down to 320px)
+// --------------------------------
+@media (max-width: 1200px) {
+  .page-content {
+    padding: rem(70) 0 rem(140);
+  }
+
+  .page-title {
+    margin-bottom: rem(24);
+    font-size: rem(30);
+    line-height: lh(40);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-content {
+    padding: rem(50) 0 rem(100);
+  }
+
+  .page-title {
+    margin-bottom: rem(20);
+    font-size: rem(26);
+    line-height: lh(36);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-content {
+    padding: rem(40) 0 rem(80);
+  }
+
+  .page-title {
+    margin-bottom: rem(16);
+    font-size: rem(22);
+    line-height: lh(30);
+    word-break: keep-all;
+  }
+}
+
+.alert-box {
+  padding: 0 rem(20);
+}
+
+.alert {
+  max-width: rem(1530);
+  margin: 0 auto;
+  padding: rem(15) rem(20);
+  margin-bottom: rem(20);
+  border: 1px solid transparent;
+  border-radius: rem(4);
+  font-family: $font-nanum-square;
+  font-size: rem(15);
+  line-height: lh(24);
+
+  &-success {
+    color: color.scale($color-success, $lightness: -30%);
+    background-color: color.scale($color-success, $lightness: 45%);
+    border-color: color.scale($color-success, $lightness: 35%);
+  }
+
+  &-info {
+    color: color.scale($color-info, $lightness: -35%);
+    background-color: color.scale($color-info, $lightness: 40%);
+    border-color: color.scale($color-info, $lightness: 25%);
+  }
+
+  &-warning {
+    color: color.scale($color-warning, $lightness: -40%);
+    background-color: color.scale($color-warning, $lightness: 40%);
+    border-color: color.scale($color-warning, $lightness: 25%);
+  }
+
+  &-danger {
+    color: color.scale($color-danger, $lightness: -25%);
+    background-color: color.scale($color-danger, $lightness: 40%);
+    border-color: color.scale($color-danger, $lightness: 30%);
+  }
+}
+

@@ -283,3 +283,133 @@
     }
   }
 }
+
+// --------------------------------
+// Responsive (down to 320px)
+// --------------------------------
+@media (max-width: 768px) {
+  .review-card,
+  .story-card {
+    &__thumb {
+      height: rem(200);
+    }
+    &__body {
+      padding: rem(20) rem(20) rem(24);
+    }
+    &__text {
+      font-size: rem(15);
+      line-height: lh(24);
+    }
+    &__separator {
+      margin: rem(20) 0 rem(16);
+    }
+    &__name {
+      font-size: rem(18);
+    }
+  }
+
+  .review-card {
+    &__profile {
+      width: rem(44);
+      height: rem(44);
+    }
+  }
+
+  .donor-card {
+    min-height: 0;
+    padding: rem(28) rem(24);
+    &__profile {
+      width: rem(44);
+      height: rem(44);
+    }
+    &__name {
+      font-size: rem(18);
+    }
+    &__text {
+      font-size: rem(15);
+      line-height: lh(24);
+    }
+    &__separator {
+      margin: rem(16) 0 rem(22);
+    }
+  }
+
+  .news-card {
+    min-height: rem(180);
+    padding: rem(28) rem(24);
+    &__category {
+      font-size: rem(15);
+    }
+    &__title {
+      margin: rem(12) 0 rem(4);
+      font-size: rem(18);
+      line-height: lh(28);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .review-card,
+  .story-card {
+    &__thumb {
+      height: rem(160);
+    }
+    &__body {
+      padding: rem(16) rem(16) rem(20);
+    }
+    &__text {
+      font-size: rem(14);
+      line-height: lh(22);
+    }
+    &__separator {
+      margin: rem(16) 0 rem(14);
+    }
+    &__name {
+      font-size: rem(16);
+    }
+    &__meta {
+      font-size: rem(12);
+    }
+  }
+
+  .review-card {
+    &__profile {
+      width: rem(40);
+      height: rem(40);
+    }
+  }
+
+  .donor-card {
+    padding: rem(20) rem(18);
+    &__profile {
+      width: rem(40);
+      height: rem(40);
+    }
+    &__name {
+      font-size: rem(16);
+    }
+    &__meta {
+      font-size: rem(12);
+    }
+    &__text {
+      font-size: rem(14);
+      line-height: lh(22);
+    }
+  }
+
+  .news-card {
+    min-height: rem(150);
+    padding: rem(20) rem(18);
+    &__category {
+      font-size: rem(14);
+    }
+    &__title {
+      margin: rem(10) 0 rem(4);
+      font-size: rem(16);
+      line-height: lh(24);
+    }
+    &__date {
+      font-size: rem(13);
+    }
+  }
+}
