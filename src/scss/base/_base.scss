@@ -7,7 +7,9 @@
 
 html {
   &::before {
-    content: url(../images/menu-bar-h.png) url(../images/calendar-w-23.png);
+    content: url(../images/menu-bar-h.png) url(../images/calendar-w-23.png)
+      url(../images/pagination/prev-double-h.png) url(../images/pagination/prev-h.png)
+      url(../images/pagination/next-h.png) url(../images/pagination/next-double-h.png);
     position: absolute;
     width: 0;
     height: 0;

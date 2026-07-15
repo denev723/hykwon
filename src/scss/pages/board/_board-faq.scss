@@ -1,0 +1,137 @@
+@use "sass:math";
+@use "sass:color";
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.board-faq {
+  max-width: rem(1120);
+  padding: 0 rem(20);
+  margin: 0 auto;
+  &__list {
+    border-top: rem(2) solid $color-secondary;
+  }
+  &__item {
+    border-bottom: 1px solid #d9dde7;
+    &.is-active {
+      .board-faq__item-button {
+        background-image: url(../images/board/faq-uarr.png);
+      }
+    }
+    &-button {
+      width: 100%;
+      display: flex;
+      gap: 0 rem(10);
+      padding: rem(25) rem(72) rem(25) 0;
+      background-image: url(../images/board/faq-darr.png);
+      background-size: rem(12);
+      background-position: calc(100% - #{rem(30)}) 50%;
+      background-repeat: no-repeat;
+      &:hover {
+        .board-faq__item-button-text {
+          color: $color-em;
+        }
+      }
+      &-icon {
+        width: rem(40);
+        height: rem(40);
+        display: block;
+        flex-shrink: 0;
+        background-image: url(../images/board/q-mark.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      &-text {
+        padding: rem(6) 0;
+        font-family: $font-nanum-square;
+        font-weight: 700;
+        font-size: rem(18);
+        line-height: lh(28);
+        text-align: left;
+        transition: color 0.3s ease;
+      }
+    }
+    &-content {
+      display: none;
+      padding: rem(30) rem(25);
+      background-color: #f4f4f4;
+      font-family: $font-nanum-square;
+      p,
+      a {
+        font-size: rem(16);
+        line-height: lh(30);
+        color: $color-black;
+      }
+      a {
+        transition: color 0.3s ease;
+        &:hover {
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+  .pagination {
+    margin-top: rem(50);
+  }
+}
+
+// --------------------------------
+// Responsive
+// --------------------------------
+@media (max-width: 768px) {
+  .board-faq {
+    &__item {
+      &-button {
+        padding: rem(22) rem(56) rem(22) 0;
+        background-position: calc(100% - #{rem(24)}) 50%;
+        &-icon {
+          width: rem(36);
+          height: rem(36);
+        }
+        &-text {
+          padding: rem(5) 0;
+          font-size: rem(17);
+          line-height: lh(26);
+        }
+      }
+      &-content {
+        padding: rem(26) rem(22);
+        p,
+        a {
+          font-size: rem(15);
+          line-height: lh(28);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .board-faq {
+    &__item {
+      &-button {
+        gap: 0 rem(8);
+        padding: rem(18) rem(44) rem(18) 0;
+        background-position: calc(100% - #{rem(18)}) 50%;
+        background-size: rem(11);
+        &-icon {
+          width: rem(32);
+          height: rem(32);
+        }
+        &-text {
+          padding: rem(4) 0;
+          font-size: rem(16);
+          line-height: lh(24);
+        }
+      }
+      &-content {
+        padding: rem(22) rem(18);
+        p,
+        a {
+          font-size: rem(14);
+          line-height: lh(26);
+        }
+      }
+    }
+  }
+}

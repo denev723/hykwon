@@ -173,6 +173,25 @@ $(document).ready(function () {
 
   updateNavCoverHeight();
 
+  var $faq = $(".board-faq");
+
+  $faq.on("click", ".board-faq__item-button", function () {
+    var $item = $(this).closest(".board-faq__item");
+    var $content = $item.find(".board-faq__item-content");
+
+    if ($item.hasClass("is-active")) {
+      $item.removeClass("is-active");
+      $content.stop(true, true).slideUp(300);
+    } else {
+      var $openSiblings = $item.siblings(".board-faq__item.is-active");
+      $openSiblings.removeClass("is-active");
+      $openSiblings.find(".board-faq__item-content").stop(true, true).slideUp(300);
+
+      $item.addClass("is-active");
+      $content.stop(true, true).slideDown(300);
+    }
+  });
+
   if (typeof Swiper !== "undefined") {
     if ($(".review-swiper").length) {
       new Swiper(".review-swiper", {

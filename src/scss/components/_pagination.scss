@@ -1,0 +1,140 @@
+@use "sass:math";
+@use "sass:color";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.pagination {
+  text-align: center;
+  &__list {
+    display: inline-flex;
+    gap: rem(10);
+  }
+  &__item {
+    &-inner {
+      width: rem(50);
+      height: rem(50);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: rem(8);
+      background-color: $color-white;
+      border: 1px solid #d9dde7;
+      transition: border-color 0.3s ease;
+      &:hover {
+        border-color: $color-secondary;
+      }
+    }
+
+    &.pagination__item--control {
+      .pagination__item-inner {
+        border-color: $color-white;
+        background-color: $color-white;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: $font-nanum-square;
+        font-weight: 700;
+        font-size: rem(18);
+        line-height: 1;
+        color: $color-secondary;
+        transition: background-image 0.3s ease, color 0.3s ease;
+      }
+    }
+    &.pagination__item--prev-double {
+      .pagination__item-inner {
+        background-image: url(../images/pagination/prev-double.png);
+        background-size: rem(18);
+        &:hover {
+          background-image: url(../images/pagination/prev-double-h.png);
+        }
+      }
+    }
+    &.pagination__item--prev {
+      .pagination__item-inner {
+        background-image: url(../images/pagination/prev.png);
+        background-size: rem(11);
+        &:hover {
+          background-image: url(../images/pagination/prev-h.png);
+        }
+      }
+    }
+    &.pagination__item--next {
+      .pagination__item-inner {
+        background-image: url(../images/pagination/next.png);
+        background-size: rem(11);
+        &:hover {
+          background-image: url(../images/pagination/next-h.png);
+        }
+      }
+    }
+    &.pagination__item--next-double {
+      .pagination__item-inner {
+        background-image: url(../images/pagination/next-double.png);
+        background-size: rem(18);
+        &:hover {
+          background-image: url(../images/pagination/next-double-h.png);
+        }
+      }
+    }
+    &.pagination__item--active {
+      .pagination__item-inner {
+        border-color: $color-secondary;
+        background-color: $color-secondary;
+        color: $color-white;
+      }
+    }
+  }
+}
+
+// --------------------------------
+// Responsive
+// --------------------------------
+@media (max-width: 768px) {
+  .pagination {
+    &__item {
+      &-inner {
+        width: rem(44);
+        height: rem(44);
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    &__list {
+      gap: rem(6);
+    }
+    &__item {
+      &-inner {
+        width: rem(40);
+        height: rem(40);
+      }
+      &.pagination__item--control {
+        .pagination__item-inner {
+          font-size: rem(16);
+        }
+        &.pagination__item--prev-double {
+          .pagination__item-inner {
+            background-size: rem(16);
+          }
+        }
+        &.pagination__item--prev {
+          .pagination__item-inner {
+            background-size: rem(9);
+          }
+        }
+        &.pagination__item--next {
+          .pagination__item-inner {
+            background-size: rem(9);
+          }
+        }
+        &.pagination__item--next-double {
+          .pagination__item-inner {
+            background-size: rem(16);
+          }
+        }
+      }
+    }
+  }
+}
