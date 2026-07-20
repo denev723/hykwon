@@ -22,12 +22,19 @@
     overflow: hidden;
     transition: background-color 0.3s ease;
     &.site-fixed-menu__link--pledge {
-      background-color: #0f39a7;
+      // background-color: #0f39a7;
+      // &:hover {
+      //   background-color: color.scale(#0f39a7, $lightness: -15%);
+      // }
+      // .site-fixed-menu__icon {
+      //   background-image: url(../images/fixed-menu-1.png);
+      // }
+      background-color: #ffd400;
       &:hover {
-        background-color: color.scale(#0f39a7, $lightness: -15%);
+        background-color: color.scale(#ffd400, $lightness: -10%);
       }
       .site-fixed-menu__icon {
-        background-image: url(../images/fixed-menu-1.png);
+        background-image: url(../images/fixed-menu-3.png);
       }
     }
     &.site-fixed-menu__link--hylion {

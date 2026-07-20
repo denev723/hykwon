@@ -1,3 +1,252 @@
-<div class="img-wrap" style="text-align: center">
-  <img src="/b/file/thumb/AZ9l3UsDdo6svoh45tnIpA/x.jpg" alt="00)main_03)리뷰남기기" />
-</div>
+<section class="donor-list" aria-label="기부자 목록">
+  <div class="donor-list__intro">
+    <div class="donor-list__intro-mascot donor-list__intro-mascot--lion" aria-hidden="true"></div>
+    <div class="donor-list__intro-text">
+      <p class="donor-list__intro-desc">
+        매일 500명 HYNARI에게 백반식, 간편식, 샐러드식을 제공하고 있습니다.
+      </p>
+      <p class="donor-list__intro-desc">
+        매일 1,000원씩 천원의 아침밥에 참여할 HYLION 500명(선착순)을 모집합니다. 사랑을
+        실천해보세요!
+      </p>
+    </div>
+    <div class="donor-list__intro-mascot donor-list__intro-mascot--sprout" aria-hidden="true"></div>
+  </div>
+
+  <ul
+    class="donor-list__grid"
+    id="donorListGrid"
+    data-page="1"
+    data-size="5"
+    data-total="10"
+    data-has-more="true"
+  >
+    <li class="donor-list__item">
+      <button
+        type="button"
+        class="donor-list-card"
+        data-name="최지연"
+        data-info="사회복지전공 / 2024학번"
+        data-image="/resources/front/images/temp/avatar-1.png"
+        data-message="천원의 아침밥을 통해 따뜻한 하루를 시작할 수 있어 감사합니다. 앞으로도 꾸준히 참여하겠습니다."
+        aria-haspopup="dialog"
+        aria-controls="donorListModal"
+      >
+        <strong class="donor-list-card__name">최지연</strong>
+        <div class="donor-list-card__meta">
+          <span class="donor-list-card__dept">사회복지전공/학번</span>
+          <span class="donor-list-card__number">24</span>
+        </div>
+      </button>
+    </li>
+    <li class="donor-list__item">
+      <button
+        type="button"
+        class="donor-list-card"
+        data-name="안지혜"
+        data-info="사회복지전공 / 2020학번"
+        data-image="/resources/front/images/temp/avatar-2.png"
+        data-message="작은 정성이 모여 큰 따뜻함이 된다는 걸 체감하고 있습니다. 함께해 주셔서 감사합니다."
+        aria-haspopup="dialog"
+        aria-controls="donorListModal"
+      >
+        <strong class="donor-list-card__name">안지혜</strong>
+        <div class="donor-list-card__meta">
+          <span class="donor-list-card__dept">사회복지전공/학번</span>
+          <span class="donor-list-card__number">20</span>
+        </div>
+      </button>
+    </li>
+    <li class="donor-list__item">
+      <button
+        type="button"
+        class="donor-list-card"
+        data-name="김이수"
+        data-info="사회복지전공 / 2022학번"
+        data-image="/resources/front/images/temp/avatar-3.png"
+        data-message="매일 아침 걱정 없이 식사할 수 있어서 공부에 더 집중할 수 있었습니다."
+        aria-haspopup="dialog"
+        aria-controls="donorListModal"
+      >
+        <strong class="donor-list-card__name">김이수</strong>
+        <div class="donor-list-card__meta">
+          <span class="donor-list-card__dept">사회복지전공/학번</span>
+          <span class="donor-list-card__number">22</span>
+        </div>
+      </button>
+    </li>
+    <li class="donor-list__item">
+      <button
+        type="button"
+        class="donor-list-card"
+        data-name="최민"
+        data-info="경제학과 / 2023학번"
+        data-image="/resources/front/images/temp/avatar-4.png"
+        data-message="천원의 아침밥 덕분에 하루를 든든하게 시작합니다. 응원해 주시는 분들께 감사드립니다."
+        aria-haspopup="dialog"
+        aria-controls="donorListModal"
+      >
+        <strong class="donor-list-card__name">최민</strong>
+        <div class="donor-list-card__meta">
+          <span class="donor-list-card__dept">경제학과/학번</span>
+          <span class="donor-list-card__number">23</span>
+        </div>
+      </button>
+    </li>
+    <li class="donor-list__item">
+      <button
+        type="button"
+        class="donor-list-card"
+        data-name="곽현민"
+        data-info="사회복지전공 교수 / 2008"
+        data-image="/resources/front/images/temp/avatar-5.png"
+        data-message="학생들이 따뜻한 아침을 먹고 하루를 시작할 수 있도록 함께 응원합니다."
+        aria-haspopup="dialog"
+        aria-controls="donorListModal"
+      >
+        <strong class="donor-list-card__name">곽현민</strong>
+        <div class="donor-list-card__meta">
+          <span class="donor-list-card__dept">사회복지전공 교수</span>
+          <span class="donor-list-card__number">08</span>
+        </div>
+      </button>
+    </li>
+  </ul>
+
+  <div class="donor-list__hidden" id="donorListHidden" hidden>
+    <ul class="donor-list__hidden-list">
+      <li class="donor-list__item">
+        <button
+          type="button"
+          class="donor-list-card"
+          data-name="박서준"
+          data-info="컴퓨터공학과 / 2021학번"
+          data-image="/resources/front/images/temp/avatar-1.png"
+          data-message="바쁜 아침에도 건강한 식사를 할 수 있어 정말 큰 도움이 됩니다."
+          aria-haspopup="dialog"
+          aria-controls="donorListModal"
+        >
+          <strong class="donor-list-card__name">박서준</strong>
+          <div class="donor-list-card__meta">
+            <span class="donor-list-card__dept">컴퓨터공학과/학번</span>
+            <span class="donor-list-card__number">21</span>
+          </div>
+        </button>
+      </li>
+      <li class="donor-list__item">
+        <button
+          type="button"
+          class="donor-list-card"
+          data-name="이하은"
+          data-info="심리학과 / 2025학번"
+          data-image="/resources/front/images/temp/avatar-2.png"
+          data-message="따뜻한 아침밥이 하루의 시작을 밝게 만들어 줍니다. 감사합니다."
+          aria-haspopup="dialog"
+          aria-controls="donorListModal"
+        >
+          <strong class="donor-list-card__name">이하은</strong>
+          <div class="donor-list-card__meta">
+            <span class="donor-list-card__dept">심리학과/학번</span>
+            <span class="donor-list-card__number">25</span>
+          </div>
+        </button>
+      </li>
+      <li class="donor-list__item">
+        <button
+          type="button"
+          class="donor-list-card"
+          data-name="정우진"
+          data-info="경영학과 / 2019학번"
+          data-image="/resources/front/images/temp/avatar-3.png"
+          data-message="천원의 아침밥은 단순한 식사가 아니라 서로를 응원하는 마음이라고 생각합니다."
+          aria-haspopup="dialog"
+          aria-controls="donorListModal"
+        >
+          <strong class="donor-list-card__name">정우진</strong>
+          <div class="donor-list-card__meta">
+            <span class="donor-list-card__dept">경영학과/학번</span>
+            <span class="donor-list-card__number">19</span>
+          </div>
+        </button>
+      </li>
+      <li class="donor-list__item">
+        <button
+          type="button"
+          class="donor-list-card"
+          data-name="한소율"
+          data-info="국어국문학과 / 2023학번"
+          data-image="/resources/front/images/temp/avatar-4.png"
+          data-message="매일 아침 든든하게 먹고 수업에 집중할 수 있어 감사한 마음입니다."
+          aria-haspopup="dialog"
+          aria-controls="donorListModal"
+        >
+          <strong class="donor-list-card__name">한소율</strong>
+          <div class="donor-list-card__meta">
+            <span class="donor-list-card__dept">국어국문학과/학번</span>
+            <span class="donor-list-card__number">23</span>
+          </div>
+        </button>
+      </li>
+      <li class="donor-list__item">
+        <button
+          type="button"
+          class="donor-list-card"
+          data-name="오민재"
+          data-info="기계공학과 / 2022학번"
+          data-image="/resources/front/images/temp/avatar-5.png"
+          data-message="작은 실천이 모여 학교에 따뜻한 문화를 만든다고 믿습니다."
+          aria-haspopup="dialog"
+          aria-controls="donorListModal"
+        >
+          <strong class="donor-list-card__name">오민재</strong>
+          <div class="donor-list-card__meta">
+            <span class="donor-list-card__dept">기계공학과/학번</span>
+            <span class="donor-list-card__number">22</span>
+          </div>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="donor-list__more">
+    <button
+      type="button"
+      class="donor-list__more-btn"
+      id="donorListMoreBtn"
+      aria-controls="donorListGrid"
+      aria-busy="false"
+    >
+      <span class="donor-list__more-icon" aria-hidden="true"></span>
+      <span class="donor-list__more-label">더보기</span>
+    </button>
+  </div>
+
+  <div
+    class="donor-list-modal"
+    id="donorListModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="donorListModalTitle"
+    hidden
+  >
+    <div class="donor-list-modal__overlay" data-modal-close></div>
+
+    <div class="donor-list-modal__panel">
+      <button type="button" class="donor-list-modal__close" data-modal-close aria-label="닫기">
+        <span class="donor-list-modal__close-icon" aria-hidden="true"></span>
+      </button>
+
+      <div class="donor-list-modal__profile">
+        <div class="donor-list-modal__thumb">
+          <img src="" alt="" class="donor-list-modal__image" id="donorListModalImage" />
+        </div>
+        <strong class="donor-list-modal__name" id="donorListModalTitle"></strong>
+        <p class="donor-list-modal__info" id="donorListModalInfo"></p>
+      </div>
+
+      <div class="donor-list-modal__message">
+        <p class="donor-list-modal__message-text" id="donorListModalMessage"></p>
+      </div>
+    </div>
+  </div>
+</section>

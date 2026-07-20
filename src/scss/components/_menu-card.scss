@@ -84,24 +84,25 @@
     }
   }
   &__body {
-    padding-right: rem(80);
+    padding-right: rem(90);
     position: relative;
   }
   &__category {
-    min-width: rem(70);
-    height: rem(40);
+    min-width: rem(84);
+    height: rem(42);
     display: inline-flex;
+    justify-content: center;
     align-items: center;
     padding: rem(8) rem(16);
     margin-bottom: rem(8);
     border-radius: rem(99);
-    background-color: #112f75;
+    border: rem(2) solid $color-primary;
     font-family: $font-nanum-square;
     font-weight: 700;
     font-size: rem(15);
     line-height: 1;
     text-align: center;
-    color: $color-white;
+    color: $color-primary;
   }
   &__title {
     font-family: $font-nanum-square;
@@ -109,6 +110,34 @@
     font-size: rem(22);
     line-height: lh(32);
     color: $color-primary;
+    @include ellipsis();
+  }
+  &__ticket {
+    width: rem(80);
+    height: rem(80);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #f1f0f6;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    &-label {
+      margin-bottom: rem(9);
+      font-family: $font-nanum-square;
+      font-size: rem(15);
+      line-height: 1;
+    }
+    &-value {
+      font-family: $font-s-core-dream;
+      font-weight: 700;
+      font-size: rem(22);
+      line-height: 1;
+      color: $color-em;
+    }
   }
   &__separator {
     width: 100%;
@@ -205,6 +234,17 @@
       font-size: rem(19);
       line-height: lh(28);
     }
+    &__ticket {
+      width: rem(60);
+      height: rem(60);
+      &-label {
+        margin-bottom: rem(7);
+        font-size: rem(13);
+      }
+      &-value {
+        font-size: rem(18);
+      }
+    }
     &__separator {
       margin: rem(20) 0 rem(16);
     }
@@ -269,6 +309,17 @@
     &__title {
       font-size: rem(16);
       line-height: lh(24);
+    }
+    &__ticket {
+      width: rem(48);
+      height: rem(48);
+      &-label {
+        margin-bottom: rem(5);
+        font-size: rem(12);
+      }
+      &-value {
+        font-size: rem(15);
+      }
     }
     &__separator {
       margin: rem(16) 0 rem(12);

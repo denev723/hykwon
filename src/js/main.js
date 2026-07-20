@@ -173,6 +173,32 @@ $(document).ready(function () {
 
   updateNavCoverHeight();
 
+  var $todaySection = $(".main-section--today");
+
+  if ($todaySection.length) {
+    $todaySection.on("click", ".main-section__tabs-link", function (e) {
+      e.preventDefault();
+
+      var $link = $(this);
+      var panelId = $link.attr("href");
+
+      if ($link.hasClass("is-active") || !panelId) {
+        return;
+      }
+
+      $todaySection.find(".main-section__tabs-link").removeClass("is-active").attr("aria-selected", "false");
+      $link.addClass("is-active").attr("aria-selected", "true");
+
+      $todaySection.find(".main-section__panel").each(function () {
+        var $panel = $(this);
+        var isMatch = "#" + $panel.attr("id") === panelId;
+
+        $panel.toggleClass("is-active", isMatch);
+        $panel.prop("hidden", !isMatch);
+      });
+    });
+  }
+
   var $faq = $(".board-faq");
 
   $faq.on("click", ".board-faq__item-button", function () {
@@ -301,5 +327,62 @@ $(document).ready(function () {
         ensureNewsSwiper($newsSection.find(panelId));
       });
     }
+  }
+
+  var $donorList = $(".donor-list");
+  var $donorModal = $("#donorListModal");
+
+  if ($donorList.length && $donorModal.length) {
+    var $donorModalImage = $("#donorListModalImage");
+    var $donorModalTitle = $("#donorListModalTitle");
+    var $donorModalInfo = $("#donorListModalInfo");
+    var $donorModalMessage = $("#donorListModalMessage");
+    var $donorModalTrigger = null;
+
+    function openDonorModal($card) {
+      var name = $card.data("name") || "";
+      var info = $card.data("info") || "";
+      var image = $card.data("image") || "";
+      var message = $card.data("message") || "";
+
+      $donorModalTitle.text(name);
+      $donorModalInfo.text(info);
+      $donorModalMessage.text(message);
+      $donorModalImage.attr("src", image).attr("alt", name);
+
+      $donorModalTrigger = $card;
+      $donorModal.addClass("is-active").attr("aria-hidden", "false");
+      $donorModal.find(".donor-list-modal__close").trigger("focus");
+    }
+
+    function closeDonorModal() {
+      if (!$donorModal.hasClass("is-active")) {
+        return;
+      }
+
+      $donorModal.removeClass("is-active").attr("aria-hidden", "true");
+
+      if ($donorModalTrigger && $donorModalTrigger.length) {
+        $donorModalTrigger.trigger("focus");
+      }
+
+      $donorModalTrigger = null;
+    }
+
+    $donorList.on("click", ".donor-list-card", function (e) {
+      e.preventDefault();
+      openDonorModal($(this));
+    });
+
+    $donorModal.on("click", "[data-modal-close]", function (e) {
+      e.preventDefault();
+      closeDonorModal();
+    });
+
+    $(document).on("keydown", function (e) {
+      if (e.key === "Escape" && $donorModal.hasClass("is-active")) {
+        closeDonorModal();
+      }
+    });
   }
 });
