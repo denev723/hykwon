@@ -22,9 +22,12 @@
 @use "pages/sub-page/_common" as *;
 
 // pages/board
+@use "pages/board/default-list" as *;
+@use "pages/board/default-read" as *;
 @use "pages/board/_board-article" as *;
 @use "pages/board/_board-gallery" as *;
 @use "pages/board/_board-faq" as *;
 
 // pages/sub-page
-@use "pages/sub-page/_donor-recognition" as *;
+@use "pages/sub-page/_board-donor-recognition" as *;
+@use "pages/sub-page/_board-donor-message" as *;

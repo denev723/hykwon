@@ -385,4 +385,56 @@ $(document).ready(function () {
       }
     });
   }
+
+  var $donorMessageList = $(".donor-message__list");
+
+  if ($donorMessageList.length && typeof Masonry !== "undefined") {
+    var donorMessageMasonry = null;
+    var donorMessageDesktopQuery = window.matchMedia("(min-width: 769px)");
+
+    function initDonorMessageMasonry() {
+      if (donorMessageMasonry) {
+        return;
+      }
+
+      donorMessageMasonry = new Masonry($donorMessageList[0], {
+        itemSelector: ".donor-message__item",
+        columnWidth: ".donor-message__item",
+        percentPosition: true,
+        gutter: 20,
+      });
+    }
+
+    function destroyDonorMessageMasonry() {
+      if (!donorMessageMasonry) {
+        return;
+      }
+
+      donorMessageMasonry.destroy();
+      donorMessageMasonry = null;
+      $donorMessageList.find(".donor-message__item").removeAttr("style");
+    }
+
+    function syncDonorMessageMasonry() {
+      if (donorMessageDesktopQuery.matches) {
+        initDonorMessageMasonry();
+      } else {
+        destroyDonorMessageMasonry();
+      }
+    }
+
+    syncDonorMessageMasonry();
+
+    if (typeof donorMessageDesktopQuery.addEventListener === "function") {
+      donorMessageDesktopQuery.addEventListener("change", syncDonorMessageMasonry);
+    } else if (typeof donorMessageDesktopQuery.addListener === "function") {
+      donorMessageDesktopQuery.addListener(syncDonorMessageMasonry);
+    }
+
+    $donorMessageList.find("img").on("load", function () {
+      if (donorMessageMasonry) {
+        donorMessageMasonry.layout();
+      }
+    });
+  }
 });

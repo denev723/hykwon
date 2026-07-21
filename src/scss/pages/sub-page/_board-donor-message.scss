@@ -1,0 +1,180 @@
+@use "sass:math";
+@use "sass:color";
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.donor-message {
+  max-width: rem(1120);
+  margin: 0 auto;
+  padding: 0 rem(20);
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: rem(20);
+    margin-bottom: rem(50);
+  }
+  &__item {
+    width: calc((100% - #{rem(20)}) / 2);
+    margin-bottom: rem(20);
+  }
+  .pagination {
+    margin-top: rem(50);
+  }
+}
+
+.donor-message-card {
+  padding: rem(29) rem(30) rem(19);
+  background-color: #f2f2f2;
+  &__profile {
+    display: flex;
+    align-items: center;
+    gap: 0 rem(13);
+    font-family: $font-nanum-square;
+    line-height: 1;
+  }
+  &__meta {
+    flex: 1;
+  }
+  &__thumb {
+    width: rem(48);
+    height: rem(48);
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #ece9f6;
+    position: relative;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+  &__name {
+    display: block;
+    margin-bottom: rem(5);
+    font-weight: 800;
+    font-size: rem(20);
+    color: $color-secondary;
+  }
+  &__info {
+    display: block;
+    font-size: rem(13);
+    color: #6b87c8;
+  }
+  &__body {
+    padding-top: rem(29);
+    margin-top: rem(20);
+    border-top: 1px solid #dddddd;
+  }
+  &__text {
+    font-family: $font-nanum-square;
+    font-size: rem(16);
+    line-height: lh(26);
+    color: $color-secondary;
+  }
+}
+
+// --------------------------------
+// Responsive (down to 320px)
+// --------------------------------
+@media (max-width: 1200px) {
+  .donor-message {
+    &__list {
+      margin-bottom: rem(40);
+    }
+  }
+
+  .donor-message-card {
+    padding: rem(26) rem(26) rem(18);
+    &__name {
+      font-size: rem(18);
+    }
+    &__text {
+      font-size: rem(15);
+      line-height: lh(24);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .donor-message {
+    padding: 0 rem(16);
+    &__list {
+      column-gap: 0;
+      margin-bottom: rem(30);
+    }
+    &__item {
+      width: 100%;
+    }
+    .pagination {
+      margin-top: rem(30);
+    }
+  }
+
+  .donor-message-card {
+    padding: rem(24) rem(20) rem(16);
+    &__profile {
+      gap: 0 rem(10);
+    }
+    &__thumb {
+      width: rem(44);
+      height: rem(44);
+    }
+    &__name {
+      margin-bottom: rem(4);
+      font-size: rem(17);
+    }
+    &__info {
+      font-size: rem(12);
+    }
+    &__body {
+      padding-top: rem(20);
+      margin-top: rem(16);
+    }
+    &__text {
+      font-size: rem(14);
+      line-height: lh(22);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .donor-message {
+    padding: 0 rem(14);
+    &__list {
+      margin-bottom: rem(24);
+    }
+    &__item {
+      margin-bottom: rem(14);
+    }
+    .pagination {
+      margin-top: rem(24);
+    }
+  }
+
+  .donor-message-card {
+    padding: rem(20) rem(16) rem(14);
+    &__thumb {
+      width: rem(40);
+      height: rem(40);
+    }
+    &__name {
+      font-size: rem(16);
+    }
+    &__info {
+      font-size: rem(11);
+    }
+    &__body {
+      padding-top: rem(16);
+      margin-top: rem(14);
+    }
+    &__text {
+      font-size: rem(13);
+      line-height: lh(20);
+      word-break: keep-all;
+    }
+  }
+}
