@@ -186,7 +186,10 @@ $(document).ready(function () {
         return;
       }
 
-      $todaySection.find(".main-section__tabs-link").removeClass("is-active").attr("aria-selected", "false");
+      $todaySection
+        .find(".main-section__tabs-link")
+        .removeClass("is-active")
+        .attr("aria-selected", "false");
       $link.addClass("is-active").attr("aria-selected", "true");
 
       $todaySection.find(".main-section__panel").each(function () {
@@ -260,6 +263,20 @@ $(document).ready(function () {
       });
     }
 
+    if ($(".project-summary-swiper").length) {
+      new Swiper(".project-summary-swiper", {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        watchOverflow: true,
+        spaceBetween: 40,
+        watchOverflow: true,
+      });
+    }
+
     var $newsSection = $(".main-section--news");
 
     function createNewsSwiper(el) {
@@ -313,7 +330,10 @@ $(document).ready(function () {
           return;
         }
 
-        $newsSection.find(".main-section__tabs-link").removeClass("is-active").attr("aria-selected", "false");
+        $newsSection
+          .find(".main-section__tabs-link")
+          .removeClass("is-active")
+          .attr("aria-selected", "false");
         $link.addClass("is-active").attr("aria-selected", "true");
 
         $newsSection.find(".main-section__panel").each(function () {
