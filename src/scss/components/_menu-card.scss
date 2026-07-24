@@ -3,60 +3,96 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-.menu-card-list {
-  display: flex;
-  gap: rem(50) rem(30);
-  &__item {
-    min-width: rem(490);
-  }
-}
-
 .menu-card {
+  height: rem(550);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding: rem(50) rem(45);
+  background-color: #f1f0f6;
   &:hover {
-    .menu-card__cta {
+    .menu-card__order {
       opacity: 1;
       visibility: visible;
     }
   }
-  &__thumb {
-    height: rem(460);
-    margin-bottom: rem(20);
-    background-color: #eaeaea;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-  }
-  &__takeout {
-    width: rem(90);
-    height: rem(46);
+  &__head {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: rem(8);
-    background-color: #112f75;
-    position: absolute;
-    top: rem(15);
-    right: rem(15);
-    &-label {
+    justify-content: space-between;
+    margin-bottom: rem(8);
+  }
+  &__title {
+    font-family: $font-s-core-dream;
+    font-weight: 300;
+    font-size: rem(36);
+    line-height: lh(44);
+    color: $color-secondary;
+  }
+  &__date {
+    margin-top: rem(2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &-ym {
+      margin-bottom: rem(8);
       font-family: $font-nanum-square;
-      font-weight: 800;
-      font-size: rem(18);
+      font-size: rem(15);
       line-height: 1;
-      color: $color-white;
-      b {
-        color: $color-yellow;
+    }
+    &-day {
+      font-family: $font-s-core-dream;
+      font-weight: 700;
+      font-size: rem(30);
+      line-height: 1;
+      color: $color-em;
+    }
+  }
+  &__status {
+    display: flex;
+    gap: rem(8);
+    margin-bottom: rem(30);
+    &-item {
+      min-width: rem(70);
+      display: inline-flex;
+      justify-content: center;
+      padding: rem(13) rem(12);
+      border-radius: rem(99);
+      background-color: $color-white;
+      font-family: $font-s-core-dream;
+      font-weight: 400;
+      font-size: rem(15);
+      line-height: lh(16);
+      color: $color-secondary;
+      text-align: center;
+      &.is-active {
+        background-color: $color-secondary;
+        color: $color-white;
       }
     }
   }
-  &__cta {
-    width: rem(180);
-    height: rem(80);
+  &__thumb {
+    height: rem(240);
+    margin-bottom: rem(18);
+    border-radius: rem(16);
+    background-color: #dddddd;
+    position: relative;
+    overflow: hidden;
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__order {
+    width: rem(150);
+    height: rem(70);
     display: inline-flex;
     align-items: center;
-    gap: 0 rem(15);
+    gap: 0 rem(7);
     padding: rem(10);
     border-radius: rem(40);
     background-color: $color-white;
@@ -68,8 +104,8 @@
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     &-icon {
-      width: rem(60);
-      height: rem(60);
+      width: rem(54);
+      height: rem(54);
       background-image: url(../images/fork-round.png);
       background-size: cover;
       background-position: center;
@@ -78,97 +114,21 @@
     &-label {
       font-family: $font-nanum-square;
       font-weight: 800;
-      font-size: rem(20);
+      font-size: rem(18);
       line-height: 1;
       color: $color-primary;
     }
   }
-  &__body {
-    padding-right: rem(90);
-    position: relative;
-  }
-  &__category {
-    min-width: rem(84);
-    height: rem(42);
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: rem(8) rem(16);
-    margin-bottom: rem(8);
-    border-radius: rem(99);
-    border: rem(2) solid $color-primary;
-    font-family: $font-nanum-square;
-    font-weight: 700;
-    font-size: rem(15);
-    line-height: 1;
-    text-align: center;
-    color: $color-primary;
-  }
-  &__title {
-    font-family: $font-nanum-square;
-    font-weight: 700;
-    font-size: rem(22);
-    line-height: lh(32);
-    color: $color-primary;
-    @include ellipsis();
-  }
-  &__ticket {
-    width: rem(80);
-    height: rem(80);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: #f1f0f6;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    &-label {
-      margin-bottom: rem(9);
-      font-family: $font-nanum-square;
-      font-size: rem(15);
-      line-height: 1;
-    }
-    &-value {
-      font-family: $font-s-core-dream;
-      font-weight: 700;
-      font-size: rem(22);
-      line-height: 1;
-      color: $color-em;
-    }
-  }
-  &__separator {
+  &__name {
     width: 100%;
-    height: 1px;
-    background-color: #dddddd;
-    margin: rem(27) 0 rem(20);
-  }
-  &__tomorrow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    &-badge {
-      width: rem(80);
-      height: rem(36);
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: rem(99);
-      background-color: #e4e5f2;
-      font-family: $font-nanum-square;
-      font-size: rem(15);
-      line-height: 1;
-      color: $color-primary;
-    }
-    &-title {
-      font-family: $font-nanum-square;
-      font-weight: 700;
-      font-size: rem(16);
-      line-height: lh(26);
-      color: $color-primary;
-    }
+    min-width: 0;
+    font-family: $font-nanum-square;
+    font-size: rem(20);
+    line-height: 1;
+    color: $color-secondary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -176,164 +136,144 @@
 // Responsive (down to 320px)
 // --------------------------------
 @media (max-width: 1200px) {
-  .menu-card-list {
-    gap: rem(40) rem(20);
-    &__item {
-      min-width: rem(360);
-    }
-  }
-
   .menu-card {
+    height: rem(500);
+    padding: rem(40) rem(36);
+
+    &__title {
+      font-size: rem(32);
+      line-height: lh(40);
+    }
+
+    &__date {
+      &-day {
+        font-size: rem(26);
+      }
+    }
+
     &__thumb {
-      height: rem(360);
+      height: rem(210);
+    }
+
+    &__name {
+      font-size: rem(18);
     }
   }
 }
 
 @media (max-width: 768px) {
-  .menu-card-list {
-    gap: rem(30) rem(20);
-  }
-
   .menu-card {
-    &__thumb {
-      height: rem(280);
-      margin-bottom: rem(16);
+    height: auto;
+    padding: rem(32) rem(28);
+
+    &__title {
+      font-size: rem(28);
+      line-height: lh(34);
     }
-    &__takeout {
-      width: rem(76);
-      height: rem(40);
-      top: rem(12);
-      right: rem(12);
+
+    &__date {
+      &-ym {
+        margin-bottom: rem(6);
+        font-size: rem(13);
+      }
+
+      &-day {
+        font-size: rem(24);
+      }
+    }
+
+    &__status {
+      margin-bottom: rem(20);
+
+      &-item {
+        min-width: rem(60);
+        padding: rem(10) rem(10);
+        font-size: rem(13);
+      }
+    }
+
+    &__thumb {
+      height: rem(180);
+      margin-bottom: rem(14);
+      border-radius: rem(12);
+    }
+
+    &__order {
+      width: rem(120);
+      height: rem(56);
+      gap: 0 rem(6);
+      padding: rem(8);
+
+      &-icon {
+        width: rem(42);
+        height: rem(42);
+      }
+
       &-label {
         font-size: rem(15);
       }
     }
-    &__cta {
-      width: rem(150);
-      height: rem(64);
-      gap: 0 rem(12);
-      &-icon {
-        width: rem(48);
-        height: rem(48);
-      }
-      &-label {
-        font-size: rem(17);
-      }
-    }
-    &__body {
-      padding-right: rem(60);
-    }
-    &__category {
-      min-width: rem(60);
-      height: rem(34);
-      padding: rem(6) rem(14);
-      font-size: rem(13);
-    }
-    &__title {
-      font-size: rem(19);
-      line-height: lh(28);
-    }
-    &__ticket {
-      width: rem(60);
-      height: rem(60);
-      &-label {
-        margin-bottom: rem(7);
-        font-size: rem(13);
-      }
-      &-value {
-        font-size: rem(18);
-      }
-    }
-    &__separator {
-      margin: rem(20) 0 rem(16);
-    }
-    &__tomorrow {
-      &-badge {
-        width: rem(72);
-        height: rem(32);
-        font-size: rem(13);
-      }
-      &-title {
-        font-size: rem(14);
-        line-height: lh(22);
-      }
+
+    &__name {
+      font-size: rem(16);
     }
   }
 }
 
 @media (max-width: 480px) {
-  .menu-card-list {
-    gap: rem(24) rem(14);
-    .menu-card-list__item {
-      min-width: rem(280);
-    }
-  }
-
   .menu-card {
-    &__thumb {
-      height: rem(240);
-      margin-bottom: rem(12);
-    }
-    &__takeout {
-      width: rem(64);
-      height: rem(34);
-      top: rem(10);
-      right: rem(10);
-      &-label {
-        font-size: rem(13);
-      }
-    }
-    &__cta {
-      width: rem(130);
-      height: rem(56);
-      gap: 0 rem(10);
-      &-icon {
-        width: rem(42);
-        height: rem(42);
-      }
-      &-label {
-        font-size: rem(15);
-      }
-    }
-    &__body {
-      padding-right: rem(48);
-    }
-    &__category {
-      min-width: rem(50);
-      height: rem(30);
-      padding: rem(5) rem(12);
-      margin-bottom: rem(6);
-      font-size: rem(12);
-    }
+    padding: rem(24) rem(20);
+
     &__title {
-      font-size: rem(16);
-      line-height: lh(24);
+      font-size: rem(22);
+      line-height: lh(28);
     }
-    &__ticket {
-      width: rem(48);
+
+    &__date {
+      &-ym {
+        font-size: rem(12);
+      }
+
+      &-day {
+        font-size: rem(20);
+      }
+    }
+
+    &__status {
+      gap: rem(6);
+      margin-bottom: rem(14);
+
+      &-item {
+        min-width: rem(52);
+        padding: rem(8) rem(8);
+        font-size: rem(12);
+      }
+    }
+
+    &__thumb {
+      height: rem(140);
+      margin-bottom: rem(12);
+      border-radius: rem(10);
+    }
+
+    &__order {
+      width: rem(100);
       height: rem(48);
+      gap: 0 rem(4);
+      padding: rem(6);
+
+      &-icon {
+        width: rem(36);
+        height: rem(36);
+      }
+
       &-label {
-        margin-bottom: rem(5);
-        font-size: rem(12);
-      }
-      &-value {
-        font-size: rem(15);
-      }
-    }
-    &__separator {
-      margin: rem(16) 0 rem(12);
-    }
-    &__tomorrow {
-      &-badge {
-        width: rem(64);
-        height: rem(28);
-        font-size: rem(12);
-      }
-      &-title {
         font-size: rem(13);
-        line-height: lh(20);
       }
+    }
+
+    &__name {
+      font-size: rem(14);
     }
   }
 }

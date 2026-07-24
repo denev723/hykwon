@@ -30,7 +30,7 @@
   }
   &__body {
     padding: rem(25) rem(30) rem(30);
-    background-color: $color-white;
+    background-color: #f6f5f9;
   }
   &__text {
     font-family: $font-nanum-square;
@@ -91,7 +91,11 @@
   min-height: rem(260);
   display: block;
   padding: rem(34) rem(30);
-  background-color: #f2f2f2;
+  background-color: $color-white;
+  background-image: url(../images/bg-heart.png);
+  background-size: rem(163);
+  background-repeat: no-repeat;
+  background-position: calc(100% + #{rem(23)}) calc(100% + #{rem(11)});
   position: relative;
   &:hover {
     &::after {
@@ -132,6 +136,7 @@
     }
   }
   &__info {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: rem(6) 0;
@@ -148,6 +153,24 @@
     font-size: rem(13);
     line-height: 1;
     color: #6b87c8;
+  }
+  &__date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &-ym {
+      margin-bottom: rem(8);
+      font-family: $font-nanum-square;
+      font-size: rem(15);
+      line-height: 1;
+    }
+    &-day {
+      font-family: $font-s-core-dream;
+      font-weight: 700;
+      font-size: rem(30);
+      line-height: 1;
+      color: $color-em;
+    }
   }
   &__text {
     font-family: $font-nanum-square;
@@ -318,12 +341,23 @@
   .donor-card {
     min-height: 0;
     padding: rem(28) rem(24);
+    background-size: rem(130);
+    background-position: calc(100% + #{rem(18)}) calc(100% + #{rem(8)});
     &__profile {
       width: rem(44);
       height: rem(44);
     }
     &__name {
       font-size: rem(18);
+    }
+    &__date {
+      &-ym {
+        margin-bottom: rem(6);
+        font-size: rem(13);
+      }
+      &-day {
+        font-size: rem(24);
+      }
     }
     &__text {
       font-size: rem(15);
@@ -381,6 +415,8 @@
 
   .donor-card {
     padding: rem(20) rem(18);
+    background-size: rem(100);
+    background-position: calc(100% + #{rem(14)}) calc(100% + #{rem(6)});
     &__profile {
       width: rem(40);
       height: rem(40);
@@ -390,6 +426,15 @@
     }
     &__meta {
       font-size: rem(12);
+    }
+    &__date {
+      &-ym {
+        margin-bottom: rem(4);
+        font-size: rem(12);
+      }
+      &-day {
+        font-size: rem(20);
+      }
     }
     &__text {
       font-size: rem(14);

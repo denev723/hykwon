@@ -173,35 +173,6 @@ $(document).ready(function () {
 
   updateNavCoverHeight();
 
-  var $todaySection = $(".main-section--today");
-
-  if ($todaySection.length) {
-    $todaySection.on("click", ".main-section__tabs-link", function (e) {
-      e.preventDefault();
-
-      var $link = $(this);
-      var panelId = $link.attr("href");
-
-      if ($link.hasClass("is-active") || !panelId) {
-        return;
-      }
-
-      $todaySection
-        .find(".main-section__tabs-link")
-        .removeClass("is-active")
-        .attr("aria-selected", "false");
-      $link.addClass("is-active").attr("aria-selected", "true");
-
-      $todaySection.find(".main-section__panel").each(function () {
-        var $panel = $(this);
-        var isMatch = "#" + $panel.attr("id") === panelId;
-
-        $panel.toggleClass("is-active", isMatch);
-        $panel.prop("hidden", !isMatch);
-      });
-    });
-  }
-
   var $faq = $(".board-faq");
 
   $faq.on("click", ".board-faq__item-button", function () {
@@ -222,6 +193,17 @@ $(document).ready(function () {
   });
 
   if (typeof Swiper !== "undefined") {
+    if ($(".today-swiper").length) {
+      new Swiper(".today-swiper", {
+        slidesPerView: "auto",
+        watchOverflow: true,
+        navigation: {
+          prevEl: ".today-swiper__prev",
+          nextEl: ".today-swiper__next",
+        },
+      });
+    }
+
     if ($(".review-swiper").length) {
       new Swiper(".review-swiper", {
         slidesPerView: "auto",
